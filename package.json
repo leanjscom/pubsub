@@ -1,8 +1,8 @@
 {
-  "name": "upmentoring-pubsub",
+  "name": "pubsub",
   "version": "1.0.0",
   "main": "index.js",
-  "repository": "git@github.com:leanjscom/upmentoring-pubsub.git",
+  "repository": "git@github.com:leanjscom/pubsub.git",
   "author": "Will Voelcker <wvoelcker@yahoo.co.uk>",
   "license": "MIT",
   "dependencies": {
