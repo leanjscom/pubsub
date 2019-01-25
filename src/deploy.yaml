@@ -1,6 +1,6 @@
 imports:
   - path: pubsub_topics.py
-  - path: pubsub_topics.yaml
+  - path: topics.yaml
 
 resources:
   - name: pubsub_topics

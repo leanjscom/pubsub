@@ -12,7 +12,7 @@ def GenerateConfig(context):
       }
   	}
 
-  f = open('pubsub_topics.yaml', 'r')
+  f = open('topics.yaml', 'r')
   topic_names = yaml.safe_load(f.read())['topics'].values()
   resources = map(generateTopic, topic_names)
 
