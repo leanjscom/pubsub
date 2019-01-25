@@ -9,6 +9,6 @@
     "js-yaml": "^3.12.1"
   },
   "scripts": {
-  	"postinstall": "node postinstall.js"
+  	"postinstall": "cp src/deploy.yaml src/pubsub_topics.py $INIT_CWD"
   }
 }
