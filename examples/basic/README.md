@@ -64,7 +64,7 @@ For example, if you have run a test deployment, you may wish to delete the deplo
 ##### Example:
 
 ```
-import { topics } from 'upmentoring-pubsub'
+import { topics } from 'this-example-repository'
 import { PubSub } from '@google-cloud/pubsub'
 
 
