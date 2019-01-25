@@ -1,5 +1,0 @@
-topics:
-  new_booking: testTopic111
-  new_user: testTopic222
-  new_cancellation_request: testTopic333
-  completed_cancellation_request: testTopic444
