@@ -62,5 +62,5 @@ At the very least, the index file should import the topics, and export them.
   }
 ```
 
-See the example implementation for mode details
+See the [example implementation](https://github.com/leanjscom/pubsub/tree/master/examples/basic) for mode details
 
