@@ -1,0 +1,14 @@
+{
+  "name": "upmentoring-pubsub",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:leanjscom/upmentoring-pubsub.git",
+  "author": "Will Voelcker <wvoelcker@yahoo.co.uk>",
+  "license": "MIT",
+  "dependencies": {
+    "pubsub": "github:leanjscom/pubsub"
+  },
+  "scripts": {
+  	"deployments": "cp $INIT_CWD/pubsub/topics.yaml node_modules/pubsub/src && gcloud deployment-manager deployments"
+  }
+}
