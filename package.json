@@ -7,8 +7,5 @@
   "license": "MIT",
   "dependencies": {
     "js-yaml": "^3.12.1"
-  },
-  "scripts": {
-  	"postinstall": "cp $INIT_CWD/pubsub/topics.yaml src || true"
   }
 }
