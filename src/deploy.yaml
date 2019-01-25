@@ -1,0 +1,7 @@
+imports:
+  - path: pubsub_topics.py
+  - path: pubsub_topics.yaml
+
+resources:
+  - name: pubsub_topics
+    type: pubsub_topics.py
