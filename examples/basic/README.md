@@ -1,24 +1,14 @@
-# Upmentoring Pub/Sub
+# Pub/Sub Example
 
 
 ## Introduction
 
-This repository defines a YAML file containing the Google Cloud Pub/Sub topics in use in Upmentoring.
+This is an example of how you could use the [PubSub](https://github.com/leanjscom/pubsub) library to create a set of pub/sub topics for your project.
 
-It can be used in two ways:
+This project could be used in two ways:
 
-1.  It can be added to a project's NPM dependencies and then imported, to get a JSON object of all available Pub/Sub topics, which you can then use to publish messages to those topics.
-2.	It can be cloned directly, and then used to deploy Pub/Sub topics to Google Cloud.
-
-You can also use this repository as a basis for achieving the same thing for different projects.  Just fork, or copy, this repository and edit the file `pubsub/topics.yaml`.  *Note: this file must exist, or it will not be possible to use this module, either for deploying topics or publishing messages to them.*
-
-
-## Motivation
-
-The idea is to:
-
-- Separate the names of the topics used in project code, from the names of the topics in Google Cloud
-- Make it easy to deploy all those topics to Google Cloud with Google Deployment Manager
+1.  It could be added to a project's NPM dependencies and then imported, to get a JSON object of all available Pub/Sub topics, which you can then use to publish messages to those topics.
+2.	It could be cloned directly, and then used to deploy Pub/Sub topics to Google Cloud.
 
 
 ## Prerequisites
@@ -28,11 +18,13 @@ To deploy pub/sub topics, you need to have the [Google Cloud CLI](https://cloud.
 
 ## Get started
 
-1.  Make sure you have a `pubsub/topics.yaml` file containing all the relevant topics for your project
+1.  Copy this project, and use it as the basis for your project
 
-2.  Run `npm install`
+2.  Make sure you have a `pubsub/topics.yaml` file containing all the relevant topics for your project
 
-3.  Make sure that your index.js contains the following code:
+3.  Run `npm install`
+
+4.  Make sure that your index.js contains the following code:
 
 ```
 const { topics } = require("pubsub")
