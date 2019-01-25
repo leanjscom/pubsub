@@ -9,6 +9,6 @@
     "js-yaml": "^3.12.1"
   },
   "scripts": {
-  	"postinstall": "cp $INIT_CWD/pubsub/topics.yaml src"
+  	"postinstall": " ([[ -f $FILE ]] && cp $INIT_CWD/pubsub/topics.yaml src) && ([[ -f $FILE ]] || echo '$INIT_CWD/pubsub/topics.yaml' not found"
   }
 }
