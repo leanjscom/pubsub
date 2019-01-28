@@ -9,6 +9,9 @@
     "pubsub": "github:leanjscom/pubsub"
   },
   "scripts": {
-  	"deployments": "cp $INIT_CWD/pubsub/topics.yaml node_modules/pubsub/src && gcloud deployment-manager deployments"
+    "deployment-create": "node node_modules/pubsub/src/deployments.js --topics $INIT_CWD/pubsub/topics.yaml --action create --deployment",
+    "deployment-update": "node node_modules/pubsub/src/deployments.js --topics $INIT_CWD/pubsub/topics.yaml --action update --deployment",
+    "deployment-delete": "node node_modules/pubsub/src/deployments.js --topics $INIT_CWD/pubsub/topics.yaml --action delete --deployment",
+    "deployments-list": "node node_modules/pubsub/src/deployments.js --topics $INIT_CWD/pubsub/topics.yaml --action list"
   }
 }

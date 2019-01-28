@@ -54,12 +54,14 @@ exports.topics = loadFrom(`${__dirname}/pubsub/topics.yaml`)
 At the very least, the index file should export a Javascript object containing the topics in the YAML file
 
 
-4.  Make sure that your parent project's `package.json` contains a number of `scripts` that run the `deploy` script in this project, as follows (one per Google Deployment Manager action that you need to support, e.g. create, update):
+4.  Make sure that your parent project's `package.json` contains a number of `scripts` that run the `deploy` script in this project, as follows:
 
 ```
   "scripts": {
-  	"create-deployment": "node node_modules/pubsub/src/deploy.js --action create --topics $INIT_CWD/pubsub/topics.yaml --deployment",
-  	"update-deployment": "node node_modules/pubsub/src/deploy.js --action update --topics $INIT_CWD/pubsub/topics.yaml --deployment"
+    "deployment-create": "node node_modules/pubsub/src/deployments.js --topics $INIT_CWD/pubsub/topics.yaml --action create --deployment",
+    "deployment-update": "node node_modules/pubsub/src/deployments.js --topics $INIT_CWD/pubsub/topics.yaml --action update --deployment",
+    "deployment-delete": "node node_modules/pubsub/src/deployments.js --topics $INIT_CWD/pubsub/topics.yaml --action delete --deployment",
+    "deployments-list": "node node_modules/pubsub/src/deployments.js --topics $INIT_CWD/pubsub/topics.yaml --action list"
   }
 ```
 
