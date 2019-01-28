@@ -13,17 +13,17 @@ cli
 const rgxSafeForShell = /^[a-zA-Z/_-]+$/
 
 const topicsPath = cli.topics
-if (!topicsPath.test(rgxSafeForShell)) {
+if (!rgxSafeForShell.test(topicsPath)) {
 	throw new Error("Unsafe topics-file path")
 }
 
 const actionName = cli.action
-if (!actionName.test(rgxSafeForShell)) {
+if (!rgxSafeForShell.test(actionName)) {
 	throw new Error("Unsafe action name")
 }
 
 const deploymentName = cli.deployment
-if (!deploymentName.test(rgxSafeForShell)) {
+if (!rgxSafeForShell.test(deploymentName)) {
 	throw new Error("Unsafe deployment name")
 }
 
