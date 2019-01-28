@@ -38,23 +38,19 @@ exports.topics = topics
 From the root directory of the project, type the following command:
 
 ```
-npm run deployments create [DEPLOYMENT_NAME] -- --config node_modules/pubsub/src/deploy.yaml
+npm run create-deployment [DEPLOYMENT_NAME]
 
 (first time)
 
 
-npm run deployments update [DEPLOYMENT_NAME] -- --config node_modules/pubsub/src/deploy.yaml
+npm run update-deployment [DEPLOYMENT_NAME]
 
 (second and later times)
 
 You should swap in a personal name for the deployment for DEPLOYMENT_NAME.
 
-Note the extra set of dashes (--) before --config; this is intentional.  The two dashes tell NPM to pass the '--config' option to the target gcloud command rather than assume it is an option for NPM.
 ```
-Later you can use `npm run deployments ...` to manage this and other deployments.
-
-For example, if you have run a test deployment, you may wish to delete the deployment to avoid any charges.  To do this, run `npm run deployments delete DEPLOYMENT_NAME`.
-
+You can add other `deployments` commands if they are supported by GCP.  For example, `delete`, which you may wish to run and add to prevent unwanted charges if you have set up a test deployment.
 
 #### Publishing messages.
 
