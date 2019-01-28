@@ -58,10 +58,11 @@ At the very least, the index file should export a Javascript object containing t
 
 ```
   "scripts": {
-    "deployment-create": "node node_modules/pubsub/src/deployments.js --topics $INIT_CWD/pubsub/topics.yaml --action create --deployment",
-    "deployment-update": "node node_modules/pubsub/src/deployments.js --topics $INIT_CWD/pubsub/topics.yaml --action update --deployment",
-    "deployment-delete": "node node_modules/pubsub/src/deployments.js --topics $INIT_CWD/pubsub/topics.yaml --action delete --deployment",
-    "deployments-list": "node node_modules/pubsub/src/deployments.js --topics $INIT_CWD/pubsub/topics.yaml --action list"
+    "deployments": "node node_modules/pubsub/src/deployments.js --topics $INIT_CWD/pubsub/topics.yaml --action",
+    "deployments-create": "npm run deployments create -- --deployment",
+    "deployments-update": "npm run deployments update -- --deployment",
+    "deployments-delete": "npm run deployments delete -- --deployment",
+    "deployments-list": "npm run deployments list"
   }
 ```
 
