@@ -9,8 +9,5 @@
     "commander": "^2.19.0",
     "js-yaml": "^3.12.1",
     "shelljs": "^0.8.3"
-  },
-  "bin": {
-  	"pubsub-deployments": "src/deployments.js"
   }
 }
