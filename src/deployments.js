@@ -6,9 +6,13 @@ cli
 	.version("0.1.0")
 	.option("-t --topics <topics-file>", "The path to the YAML file containing the list of topics")
 	.option("-a --action <action-name>", "The action to perform on the specified deployment (e.g. create, update)")
-	.option("-d --deployment <deployment-name>", "The name of the deployment to manage")
+	.option("-d --deployment [deployment-name]", "The name of the deployment to manage")
 	.parse(process.argv)
 
+
+if (cli.action !== "list" && !(cli.deployment && typeof cli.deployment === "string")) {
+	throw new Error("Deployment name is mandatory for all actions other than 'list'")
+}
 
 const rgxSafeForShell = /^[a-zA-Z/_\-.]+$/
 
@@ -28,6 +32,10 @@ if (!rgxSafeForShell.test(deploymentName)) {
 }
 
 
-const cmd = `cp '${topicsPath}' '${__dirname}' && gcloud deployment-manager deployments '${actionName}' '${deploymentName}' --config '${__dirname}/deploy.yaml'`
+const cp = `cp '${topicsPath}' '${__dirname}'`
+const action = `gcloud deployment-manager deployments '${actionName}'`
+const deployment = `${actionName === 'list' ? `` : `'${deploymentName}'`}`
+const config = `${(actionName === 'delete' || actionName === "list") ? ``:` --config '${__dirname}/deploy.yaml'`}`
+const cmd = `${cp} && ${action} ${deployment} ${config}`
 console.log(cmd)
 shell.exec(cmd)
