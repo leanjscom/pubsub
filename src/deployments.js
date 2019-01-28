@@ -10,7 +10,7 @@ cli
 	.parse(process.argv)
 
 
-const rgxSafeForShell = /^[a-zA-Z/_-]+$/
+const rgxSafeForShell = /^[a-zA-Z/_\-.]+$/
 
 const topicsPath = cli.topics
 if (!rgxSafeForShell.test(topicsPath)) {
@@ -27,4 +27,7 @@ if (!rgxSafeForShell.test(deploymentName)) {
 	throw new Error("Unsafe deployment name")
 }
 
-shell.exec(`cp '${topicsPath}' '${__dirname}' && gcloud deployment-manager deployments '${actionName}' ${deploymentName}' --config '${__dirname}/deploy.yaml'`)
+
+const cmd = `cp '${topicsPath}' '${__dirname}' && gcloud deployment-manager deployments '${actionName}' '${deploymentName}' --config '${__dirname}/deploy.yaml'`
+console.log(cmd)
+shell.exec(cmd)
