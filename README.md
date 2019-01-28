@@ -65,6 +65,13 @@ At the very least, the index file should export a Javascript object containing t
     "deployments-list": "npm run deployments list"
   }
 ```
+You can then use these commands by specifying the command followed by the function name you wish to manage:
+```
+npm run deployments-create [DEPLOYMENT-NAME]
+npm run deployments-update [DEPLOYMENT-NAME]
+npm run deployments-delete [DEPLOYMENT-NAME]
+npm run deployments-list
+```
 
 See the [example implementation](https://github.com/leanjscom/pubsub/tree/master/examples/basic) for mode details
 
