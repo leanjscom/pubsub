@@ -54,11 +54,12 @@ exports.topics = loadFrom(`${__dirname}/pubsub/topics.yaml`)
 At the very least, the index file should export a Javascript object containing the topics in the YAML file
 
 
-4.  Make sure that your parent project's `package.json` contains a `script` that runs the 'deploy.js' script in this project, with an empty trailing --deployment option, and specifying the path to the YAML file containing the pub-sub topics, as follows:
+4.  Make sure that your parent project's `package.json` contains a number of `scripts` that run the `deploy` script in this project, as follows (one per Google Deployment Manager action that you need to support, e.g. create, update):
 
 ```
   "scripts": {
-  	"deployments": "node_modules/pubsub/src/deploy.js --deployment -- --topics $INIT_CWD/pubsub/topics.yaml"
+  	"create-deployment": "node_modules/pubsub/src/deploy.js --action create --topics $INIT_CWD/pubsub/topics.yaml --deployment",
+  	"update-deployment": "node_modules/pubsub/src/deploy.js --action update --topics $INIT_CWD/pubsub/topics.yaml --deployment"
   }
 ```
 
