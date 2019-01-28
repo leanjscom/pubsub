@@ -31,7 +31,7 @@ To deploy pub/sub topics, you need to have the [Google Cloud CLI](https://cloud.
 npm install --save leanjscom/pubsub
 ```
 
-2.  Create a file in the parent project called `pubsub/topics.yaml` that contains a list of topics, in the following format:
+2.  Create a file in the parent project called, for example, `pubsub/topics.yaml` that contains a list of topics, in the following format:
 
 ```
 topics:
@@ -47,11 +47,11 @@ The names on the left are the ones intended for use in your application code, an
 3.  Make sure that your parent project's index file contains the following code:
 
 ```
-const { topics } = require("pubsub")
+const { loadFrom } = require("pubsub")
 
-exports.topics = topics
+exports.topics = loadFrom(`${__dirname}/pubsub/topics.yaml`)
 ```
-At the very least, the index file should import the topics, and export them.
+At the very least, the index file should export a Javascript object containing the topics in the YAML file
 
 
 4.  Make sure that your parent project's `package.json` contains a `script` that copies in the `pubsub/topics.yaml` before using this module to deploy topics to Google Cloud.

@@ -9,9 +9,7 @@ if (!module.parent.filename) {
 	throw new Error("No parent module filename could be determined")
 }
 
-const parentRoot = path.dirname(module.parent.filename)
-const topicsFile = `${parentRoot}/pubsub/topics.yaml`
-const doc = yaml.loadFileSync(topicsFile)
-
-
-exports.topics = doc.topics
+exports.loadFrom = filepath => {
+	const doc = yaml.loadFileSync(topicsFile)
+	return doc.topics
+}
