@@ -1,3 +1,3 @@
-const { topics } = require("pubsub")
+const { loadFrom } = require("pubsub")
 
-exports.topics = topics
+exports.topics = loadFrom(`${__dirname}/pubsub/topics.yaml`)
